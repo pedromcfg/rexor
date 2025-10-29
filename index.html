@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rexor - Luxo Automotivo Português</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Crimson+Pro:wght@200;300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-logo">
+                <img src="assets/images/logoSemSlogan.png" alt="Rexor" class="logo">
+            </div>
+            <div class="nav-spacer"></div>
+        </div>
+    </nav>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="side-menu">
+        <div class="side-menu-content">
+            <div class="side-menu-header">
+                <img src="assets/images/logoSemSlogan.png" alt="Rexor" class="side-logo">
+                <button class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="side-menu-links">
+                <a href="#home" class="side-link">Início</a>
+                <a href="#models" class="side-link">Modelos</a>
+                <a href="#mission" class="side-link">Missão</a>
+                <a href="#values" class="side-link">Valores</a>
+                <a href="#about" class="side-link">Sobre</a>
+                <a href="#contact" class="side-link">Contacto</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="assets/images/logo.png" alt="Rexor">
+            </div>
+            <div class="hero-cta">
+                <button class="cta-button primary">Descobrir Modelos</button>
+                <button class="cta-button secondary">Agendar Teste</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Models Section -->
+    <section id="models" class="models">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Os nossos modelos</h2>
+                <p class="section-subtitle">Cada veículo Rexor é uma obra de arte em movimento</p>
+            </div>
+            <div class="models-grid">
+                <div class="model-card">
+                    <div class="model-image">
+                        <img src="assets/images/carro1.jpeg" alt="Rexor Veloce">
+                        <div class="model-overlay">
+                            <button class="model-button">Explorar</button>
+                        </div>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Rexor Veloce</h3>
+                        <p class="model-type">Desportivo de Luxo</p>
+                        <p class="model-description">Potência pura e elegância atemporal. O Veloce representa o pináculo da engenharia desportiva portuguesa.</p>
+                        <div class="model-specs">
+                            <span class="spec">V8 4.0L</span>
+                            <span class="spec">650 CV</span>
+                            <span class="spec">0-100 km/h: 3.2s</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="model-card">
+                    <div class="model-image">
+                        <img src="assets/images/carro2.jpeg" alt="Rexor Terra">
+                        <div class="model-overlay">
+                            <button class="model-button">Explorar</button>
+                        </div>
+                    </div>
+                    <div class="model-info">
+                        <h3 class="model-name">Rexor Terra</h3>
+                        <p class="model-type">SUV de Luxo</p>
+                        <p class="model-description">Versatilidade e sofisticação. O Terra combina o conforto urbano com a capacidade de conquistar qualquer terreno.</p>
+                        <div class="model-specs">
+                            <span class="spec">V6 3.0L</span>
+                            <span class="spec">450 CV</span>
+                            <span class="spec">Tração 4x4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h2 class="section-title">A nossa missão</h2>
+                    <p class="mission-description">
+                        Na Rexor, acreditamos que cada veículo deve ser mais do que um meio de transporte. 
+                        Deve ser uma expressão de personalidade, uma obra de arte que reflete os valores 
+                        e aspirações de quem o conduz.
+                    </p>
+                    <p class="mission-description">
+                        Inspirados pela rica tradição automotiva portuguesa e pela nossa herança de 
+                        excelência artesanal, criamos veículos que combinam performance excecional 
+                        com design atemporal.
+                    </p>
+                </div>
+                <div class="mission-image">
+                    <div class="mission-placeholder">
+                        <i class="fas fa-crown"></i>
+                        <p>Excelência Portuguesa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" class="values">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Os nossos valores</h2>
+                <p class="section-subtitle">Os princípios que guiam cada decisão na Rexor</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="value-title">Excelência</h3>
+                    <p class="value-description">Cada detalhe é cuidadosamente considerado para atingir a perfeição absoluta.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="value-title">Sustentabilidade</h3>
+                    <p class="value-description">Comprometidos com um futuro mais limpo através de tecnologias inovadoras.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Tradição</h3>
+                    <p class="value-description">Honramos a herança portuguesa enquanto abraçamos a inovação moderna.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="value-title">Exclusividade</h3>
+                    <p class="value-description">Cada veículo é único, criado para clientes que apreciam o extraordinário.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre a Rexor</h2>
+                    <p class="about-description">
+                        Fundada em 2020, a Rexor nasceu da visão de criar a primeira marca automotiva 
+                        de luxo verdadeiramente portuguesa. Inspirados pela rica tradição de excelência 
+                        artesanal do nosso país, estabelecemos-nos como concorrente direto da Adamastor.
+                    </p>
+                    <p class="about-description">
+                        A nossa equipa de engenheiros e designers combina décadas de experiência 
+                        na indústria automotiva com uma paixão genuína pela inovação. Cada veículo 
+                        Rexor é desenvolvido e produzido em Portugal, utilizando as mais avançadas 
+                        tecnologias e materiais premium.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Anos de Excelência</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Modelos Únicos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Made in Portugal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contacte-nos</h2>
+                <p class="section-subtitle">Pronto para descobrir o mundo Rexor?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Showroom Principal</h4>
+                            <p>Rua da Liberdade, 123<br>Lisboa, Portugal</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>+351 21 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@rexor.pt</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Telefone">
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Interesse</option>
+                                <option value="veloce">Rexor Veloce</option>
+                                <option value="terra">Rexor Terra</option>
+                                <option value="both">Ambos os Modelos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mensagem" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/logo.png" alt="Rexor">
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Modelos</h4>
+                        <a href="#models">Rexor Veloce</a>
+                        <a href="#models">Rexor Terra</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Empresa</h4>
+                        <a href="#about">Sobre Nós</a>
+                        <a href="#mission">Missão</a>
+                        <a href="#values">Valores</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contacto</h4>
+                        <a href="#contact">Showroom</a>
+                        <a href="#contact">Agendar Teste</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rexor. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
