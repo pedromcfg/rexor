@@ -76,18 +76,17 @@ ctaButtons.forEach(button => {
     });
 });
 
-// Model button functionality
+// Model button functionality - removed scroll to contact
 modelButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-        e.preventDefault();
-        // Add animation or modal functionality here
-        button.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            button.style.transform = 'scale(1)';
-        }, 150);
-        
-        // Scroll to contact section for more info
-        smoothScroll('#contact');
+        // Only add animation for buttons that don't have specific functionality
+        if (!button.id || button.id !== 'explore-invictus') {
+            e.preventDefault();
+            button.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+            }, 150);
+        }
     });
 });
 
@@ -290,6 +289,109 @@ window.addEventListener('scroll', () => {
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
     scrollProgress.style.width = scrolled + '%';
+});
+
+// Gallery Modal and Carousel Functionality
+const galleryModal = document.getElementById('gallery-modal');
+const modalOverlay = document.getElementById('modal-overlay');
+const modalClose = document.getElementById('modal-close');
+const exploreInvictus = document.getElementById('explore-invictus');
+const carouselPrev = document.getElementById('carousel-prev');
+const carouselNext = document.getElementById('carousel-next');
+const carouselSlides = document.querySelectorAll('.carousel-slide');
+const carouselDots = document.querySelectorAll('.dot');
+
+let currentSlide = 0;
+
+function openGalleryModal() {
+    if (galleryModal) {
+        galleryModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        currentSlide = 0;
+        updateCarousel();
+    }
+}
+
+function closeGalleryModal() {
+    if (galleryModal) {
+        galleryModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function updateCarousel() {
+    // Update slides
+    carouselSlides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === currentSlide) {
+            slide.classList.add('active');
+        }
+    });
+    
+    // Update dots
+    carouselDots.forEach((dot, index) => {
+        dot.classList.remove('active');
+        if (index === currentSlide) {
+            dot.classList.add('active');
+        }
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % carouselSlides.length;
+    updateCarousel();
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+    updateCarousel();
+}
+
+// Event listeners for gallery modal
+if (exploreInvictus) {
+    exploreInvictus.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openGalleryModal();
+    });
+}
+
+if (modalClose) {
+    modalClose.addEventListener('click', closeGalleryModal);
+}
+
+if (modalOverlay) {
+    modalOverlay.addEventListener('click', closeGalleryModal);
+}
+
+// Carousel navigation
+if (carouselNext) {
+    carouselNext.addEventListener('click', nextSlide);
+}
+
+if (carouselPrev) {
+    carouselPrev.addEventListener('click', prevSlide);
+}
+
+// Dot navigation
+carouselDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentSlide = index;
+        updateCarousel();
+    });
+});
+
+// Keyboard navigation for carousel
+document.addEventListener('keydown', (e) => {
+    if (galleryModal && galleryModal.classList.contains('active')) {
+        if (e.key === 'Escape') {
+            closeGalleryModal();
+        } else if (e.key === 'ArrowLeft') {
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+        }
+    }
 });
 
 // Initialize everything when DOM is loaded
