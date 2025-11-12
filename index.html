@@ -92,7 +92,7 @@
                     <div class="model-image">
                         <img src="assets/images/carro2.jpeg" alt="Rexor Imperium">
                         <div class="model-overlay">
-                            <button class="model-button">Ver imagens</button>
+                            <button class="model-button" id="explore-imperium">Ver imagens</button>
                         </div>
                     </div>
                     <div class="model-info">
@@ -184,15 +184,16 @@
                 <div class="about-text">
                     <h2 class="section-title">Sobre a Rexor</h2>
                     <p class="about-description">
-                        Fundada em 2020, a Rexor nasceu da visão de criar a primeira marca automotiva 
-                        de luxo verdadeiramente portuguesa. Inspirados pela rica tradição de excelência 
-                        artesanal do nosso país, estabelecemos-nos como concorrente direto da Adamastor.
+                        Na Rexor, não somos apenas uma marca automóvel somos o símbolo de quem lidera a estrada.
                     </p>
                     <p class="about-description">
-                        A nossa equipa de engenheiros e designers combina décadas de experiência 
-                        na indústria automotiva com uma paixão genuína pela inovação. Cada veículo 
-                        Rexor é desenvolvido e produzido em Portugal, utilizando as mais avançadas 
-                        tecnologias e materiais premium.
+                        O nome Rexor nasce da palavra "rei" porque acreditamos que cada condutor merece sentir-se no comando, com potência, presença e confiança.
+                    </p>
+                    <p class="about-description">
+                        Criámos a Rexor para os apaixonados pelo mundo automóvel. Cada viatura, cada detalhe e cada experiência reflete o nosso compromisso com a excelência, a inovação e o estilo.
+                    </p>
+                    <p class="about-description">
+                        Conduzir não é apenas chegar ao destino é dominar o caminho. É viver cada curva com atitude, cada quilómetro com emoção.
                     </p>
                     <div class="about-stats">
                         <div class="stat">
@@ -305,18 +306,18 @@
         </div>
     </footer>
 
-    <!-- Gallery Modal -->
-    <div class="gallery-modal" id="gallery-modal">
-        <div class="modal-overlay" id="modal-overlay"></div>
+    <!-- Gallery Modal Invictus -->
+    <div class="gallery-modal" id="gallery-modal-invictus">
+        <div class="modal-overlay" id="modal-overlay-invictus"></div>
         <div class="modal-content">
-            <button class="modal-close" id="modal-close">
+            <button class="modal-close" id="modal-close-invictus">
                 <i class="fas fa-times"></i>
             </button>
             <div class="carousel-container">
-                <button class="carousel-btn carousel-prev" id="carousel-prev">
+                <button class="carousel-btn carousel-prev" id="carousel-prev-invictus">
                     <i class="fas fa-chevron-left"></i>
                 </button>
-                <div class="carousel-slides">
+                <div class="carousel-slides" id="carousel-slides-invictus">
                     <div class="carousel-slide active">
                         <img src="assets/images/imperium1.jpg" alt="Rexor Invictus">
                     </div>
@@ -327,10 +328,44 @@
                         <img src="assets/images/imperium3.jpg" alt="Rexor Invictus">
                     </div>
                 </div>
-                <button class="carousel-btn carousel-next" id="carousel-next">
+                <button class="carousel-btn carousel-next" id="carousel-next-invictus">
                     <i class="fas fa-chevron-right"></i>
                 </button>
-                <div class="carousel-dots">
+                <div class="carousel-dots" id="carousel-dots-invictus">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal Imperium -->
+    <div class="gallery-modal" id="gallery-modal-imperium">
+        <div class="modal-overlay" id="modal-overlay-imperium"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close-imperium">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-prev" id="carousel-prev-imperium">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-slides" id="carousel-slides-imperium">
+                    <div class="carousel-slide active">
+                        <img src="assets/images/invictus1.jpg" alt="Rexor Imperium">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/images/invictus2.jpg" alt="Rexor Imperium">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/images/invictus3.jpg" alt="Rexor Imperium">
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-next" id="carousel-next-imperium">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-dots" id="carousel-dots-imperium">
                     <span class="dot active" data-slide="0"></span>
                     <span class="dot" data-slide="1"></span>
                     <span class="dot" data-slide="2"></span>

@@ -292,36 +292,50 @@ window.addEventListener('scroll', () => {
 });
 
 // Gallery Modal and Carousel Functionality
-const galleryModal = document.getElementById('gallery-modal');
-const modalOverlay = document.getElementById('modal-overlay');
-const modalClose = document.getElementById('modal-close');
+// Invictus Carousel
+const galleryModalInvictus = document.getElementById('gallery-modal-invictus');
+const modalOverlayInvictus = document.getElementById('modal-overlay-invictus');
+const modalCloseInvictus = document.getElementById('modal-close-invictus');
 const exploreInvictus = document.getElementById('explore-invictus');
-const carouselPrev = document.getElementById('carousel-prev');
-const carouselNext = document.getElementById('carousel-next');
-const carouselSlides = document.querySelectorAll('.carousel-slide');
-const carouselDots = document.querySelectorAll('.dot');
+const carouselPrevInvictus = document.getElementById('carousel-prev-invictus');
+const carouselNextInvictus = document.getElementById('carousel-next-invictus');
+const carouselSlidesInvictus = document.querySelectorAll('#carousel-slides-invictus .carousel-slide');
+const carouselDotsInvictus = document.querySelectorAll('#carousel-dots-invictus .dot');
 
-let currentSlide = 0;
+// Imperium Carousel
+const galleryModalImperium = document.getElementById('gallery-modal-imperium');
+const modalOverlayImperium = document.getElementById('modal-overlay-imperium');
+const modalCloseImperium = document.getElementById('modal-close-imperium');
+const exploreImperium = document.getElementById('explore-imperium');
+const carouselPrevImperium = document.getElementById('carousel-prev-imperium');
+const carouselNextImperium = document.getElementById('carousel-next-imperium');
+const carouselSlidesImperium = document.querySelectorAll('#carousel-slides-imperium .carousel-slide');
+const carouselDotsImperium = document.querySelectorAll('#carousel-dots-imperium .dot');
 
-function openGalleryModal() {
-    if (galleryModal) {
-        galleryModal.classList.add('active');
+let currentSlideInvictus = 0;
+let currentSlideImperium = 0;
+let activeModal = null;
+
+// Generic functions for carousel
+function openGalleryModal(modal, slides, dots) {
+    if (modal) {
+        modal.classList.add('active');
         document.body.style.overflow = 'hidden';
-        currentSlide = 0;
-        updateCarousel();
+        activeModal = modal;
     }
 }
 
-function closeGalleryModal() {
-    if (galleryModal) {
-        galleryModal.classList.remove('active');
+function closeGalleryModal(modal) {
+    if (modal) {
+        modal.classList.remove('active');
         document.body.style.overflow = 'auto';
+        activeModal = null;
     }
 }
 
-function updateCarousel() {
+function updateCarousel(slides, dots, currentSlide) {
     // Update slides
-    carouselSlides.forEach((slide, index) => {
+    slides.forEach((slide, index) => {
         slide.classList.remove('active');
         if (index === currentSlide) {
             slide.classList.add('active');
@@ -329,7 +343,7 @@ function updateCarousel() {
     });
     
     // Update dots
-    carouselDots.forEach((dot, index) => {
+    dots.forEach((dot, index) => {
         dot.classList.remove('active');
         if (index === currentSlide) {
             dot.classList.add('active');
@@ -337,59 +351,107 @@ function updateCarousel() {
     });
 }
 
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % carouselSlides.length;
-    updateCarousel();
-}
-
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
-    updateCarousel();
-}
-
-// Event listeners for gallery modal
+// Invictus Event Listeners
 if (exploreInvictus) {
     exploreInvictus.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        openGalleryModal();
+        currentSlideInvictus = 0;
+        openGalleryModal(galleryModalInvictus, carouselSlidesInvictus, carouselDotsInvictus);
+        updateCarousel(carouselSlidesInvictus, carouselDotsInvictus, currentSlideInvictus);
     });
 }
 
-if (modalClose) {
-    modalClose.addEventListener('click', closeGalleryModal);
+if (modalCloseInvictus) {
+    modalCloseInvictus.addEventListener('click', () => closeGalleryModal(galleryModalInvictus));
 }
 
-if (modalOverlay) {
-    modalOverlay.addEventListener('click', closeGalleryModal);
+if (modalOverlayInvictus) {
+    modalOverlayInvictus.addEventListener('click', () => closeGalleryModal(galleryModalInvictus));
 }
 
-// Carousel navigation
-if (carouselNext) {
-    carouselNext.addEventListener('click', nextSlide);
+if (carouselNextInvictus) {
+    carouselNextInvictus.addEventListener('click', () => {
+        currentSlideInvictus = (currentSlideInvictus + 1) % carouselSlidesInvictus.length;
+        updateCarousel(carouselSlidesInvictus, carouselDotsInvictus, currentSlideInvictus);
+    });
 }
 
-if (carouselPrev) {
-    carouselPrev.addEventListener('click', prevSlide);
+if (carouselPrevInvictus) {
+    carouselPrevInvictus.addEventListener('click', () => {
+        currentSlideInvictus = (currentSlideInvictus - 1 + carouselSlidesInvictus.length) % carouselSlidesInvictus.length;
+        updateCarousel(carouselSlidesInvictus, carouselDotsInvictus, currentSlideInvictus);
+    });
 }
 
-// Dot navigation
-carouselDots.forEach((dot, index) => {
+carouselDotsInvictus.forEach((dot, index) => {
     dot.addEventListener('click', () => {
-        currentSlide = index;
-        updateCarousel();
+        currentSlideInvictus = index;
+        updateCarousel(carouselSlidesInvictus, carouselDotsInvictus, currentSlideInvictus);
+    });
+});
+
+// Imperium Event Listeners
+if (exploreImperium) {
+    exploreImperium.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        currentSlideImperium = 0;
+        openGalleryModal(galleryModalImperium, carouselSlidesImperium, carouselDotsImperium);
+        updateCarousel(carouselSlidesImperium, carouselDotsImperium, currentSlideImperium);
+    });
+}
+
+if (modalCloseImperium) {
+    modalCloseImperium.addEventListener('click', () => closeGalleryModal(galleryModalImperium));
+}
+
+if (modalOverlayImperium) {
+    modalOverlayImperium.addEventListener('click', () => closeGalleryModal(galleryModalImperium));
+}
+
+if (carouselNextImperium) {
+    carouselNextImperium.addEventListener('click', () => {
+        currentSlideImperium = (currentSlideImperium + 1) % carouselSlidesImperium.length;
+        updateCarousel(carouselSlidesImperium, carouselDotsImperium, currentSlideImperium);
+    });
+}
+
+if (carouselPrevImperium) {
+    carouselPrevImperium.addEventListener('click', () => {
+        currentSlideImperium = (currentSlideImperium - 1 + carouselSlidesImperium.length) % carouselSlidesImperium.length;
+        updateCarousel(carouselSlidesImperium, carouselDotsImperium, currentSlideImperium);
+    });
+}
+
+carouselDotsImperium.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentSlideImperium = index;
+        updateCarousel(carouselSlidesImperium, carouselDotsImperium, currentSlideImperium);
     });
 });
 
 // Keyboard navigation for carousel
 document.addEventListener('keydown', (e) => {
-    if (galleryModal && galleryModal.classList.contains('active')) {
+    if (activeModal === galleryModalInvictus && galleryModalInvictus.classList.contains('active')) {
         if (e.key === 'Escape') {
-            closeGalleryModal();
+            closeGalleryModal(galleryModalInvictus);
         } else if (e.key === 'ArrowLeft') {
-            prevSlide();
+            currentSlideInvictus = (currentSlideInvictus - 1 + carouselSlidesInvictus.length) % carouselSlidesInvictus.length;
+            updateCarousel(carouselSlidesInvictus, carouselDotsInvictus, currentSlideInvictus);
         } else if (e.key === 'ArrowRight') {
-            nextSlide();
+            currentSlideInvictus = (currentSlideInvictus + 1) % carouselSlidesInvictus.length;
+            updateCarousel(carouselSlidesInvictus, carouselDotsInvictus, currentSlideInvictus);
+        }
+    } else if (activeModal === galleryModalImperium && galleryModalImperium.classList.contains('active')) {
+        if (e.key === 'Escape') {
+            closeGalleryModal(galleryModalImperium);
+        } else if (e.key === 'ArrowLeft') {
+            currentSlideImperium = (currentSlideImperium - 1 + carouselSlidesImperium.length) % carouselSlidesImperium.length;
+            updateCarousel(carouselSlidesImperium, carouselDotsImperium, currentSlideImperium);
+        } else if (e.key === 'ArrowRight') {
+            currentSlideImperium = (currentSlideImperium + 1) % carouselSlidesImperium.length;
+            updateCarousel(carouselSlidesImperium, carouselDotsImperium, currentSlideImperium);
         }
     }
 });
